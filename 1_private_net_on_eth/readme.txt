@@ -3,7 +3,6 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install ethereum
-First launch bootnode
 
 # Create node1:
 geth account new --datadir node1
@@ -33,10 +32,10 @@ geth account new --datadir node5
 # Bootnode address:
 735137734c5e95e47f6b50c255b1137aea9cd06256d9eab3d1151f328eb7028263bc48441ef383c95944777378b119832f6f2f4697352026268311f4e47e6dfb@127.0.0.1:0?discport=30301
 
-#Launch bootnode:
+# Launch bootnode:
 bootnode --nodekey=boot.key
 
-# Launch node1 in new terminal
+# Launch node1 in new terminal:
 geth init --datadir node1 genesis.json
 echo '75612' > node1/password.txt
 geth --datadir node1 \
