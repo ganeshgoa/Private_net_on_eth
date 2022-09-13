@@ -107,7 +107,7 @@ geth --datadir node4 \
   --mine \
   --allow-insecure-unlock
 
-# Launch node4:
+# Launch node5:
 geth init --datadir node5 genesis.json
 echo '75612' > node5/password.txt
 geth --datadir node5 \
