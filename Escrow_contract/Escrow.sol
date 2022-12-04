@@ -22,8 +22,6 @@ contract Escrow {
         return true;
     }
 
-
-
     function transferToMe(address _owner, address _token, uint amount) public {
         ERC20(_token).transferFrom(_owner, address(this), amount);
     }

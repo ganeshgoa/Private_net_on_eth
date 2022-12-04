@@ -1,0 +1,4 @@
+https://geth.ethereum.org/docs/dapp/native-bindings
+
+solc --abi --bin ./store/Storage.sol -o build
+abigen --bin=./build/Storage.bin --abi ./build/Storage.abi --pkg store --type Storage --out ./store/Storage.go
