@@ -13,26 +13,19 @@ import (
 	store "github.com/ganeshgoa/blockchain/code_examples/smart-contract/test2/store"
 )
 
-const (
-	fileKeystore  = "UTC--2021-12-28T17-30-07.282049100Z--982ca83b2221f620b7c43303cc66a34b6c1c70ad" 
-	privateKey    = "111"
-	faucetAddress = "0x4215fd451f6219DA9eb9216Bcc5E74F96B55C884" 
-	gasLimit      = 3000000   
-)
-
 func main() {
 	ctx := context.Background()
 
 	client, err := ethclient.Dial("https://cloudflare-eth.com")
-    if err != nil {
-        log.Fatal(err)
-    }
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer client.Close()
 
 	chainID, err := client.ChainID(ctx)
 	if err != nil {
-        log.Fatal(err)
-    }
+		log.Fatal(err)
+	}
 
 	// тут нужно передать какие-то параметры (ключ-значение) вместо 111
 	keyin := strings.NewReader("111")
@@ -55,7 +48,6 @@ func main() {
 		log.Fatalf("Failed to call storage.Store: %v", err)
 	}
 	fmt.Printf("Transaction waiting to be mined: 0x%x\n\n", tx.Hash())
-	
 
 	val, err := storage.Retrieve(&bind.CallOpts{})
 	if err != nil {
